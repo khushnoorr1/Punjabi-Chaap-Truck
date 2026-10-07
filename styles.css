@@ -132,82 +132,122 @@ section {
 
 .hero {
   position: relative;
-  min-height: 680px;
-  padding: 90px 7%;
+  min-height: 720px;
+  padding: 100px 7%;
   display: grid;
+  grid-template-columns: 1.15fr .85fr;
   align-items: center;
+  gap: 50px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 85% 45%, rgba(255, 75, 20, .28), transparent 32%),
-    radial-gradient(circle at 15% 80%, rgba(255, 183, 0, .16), transparent 30%),
-    linear-gradient(135deg, #090909 0%, #15110d 55%, #090909 100%);
-  border-bottom: 1px solid rgba(255, 183, 0, .22);
+    radial-gradient(circle at 80% 45%, rgba(255,55,20,.30), transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(255,183,0,.14), transparent 30%),
+    linear-gradient(135deg,#070707,#17110c 55%,#080808);
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  width: 420px;
-  height: 420px;
-  right: -120px;
+  width: 500px;
+  height: 500px;
+  right: -180px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 55, 20, .18);
-  filter: blur(90px);
+  background: rgba(255,60,20,.20);
+  filter: blur(100px);
   border-radius: 50%;
 }
 
 .hero > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero h1 {
-  max-width: 850px;
-  font-size: clamp(48px, 6vw, 82px);
-  line-height: .98;
-  letter-spacing: -3px;
-  margin: 18px 0;
-  text-shadow: 0 12px 35px rgba(0,0,0,.65);
+  max-width: 800px;
+  font-size: clamp(52px,6.5vw,88px);
+  line-height: .95;
+  letter-spacing: -4px;
+  margin: 18px 0 24px;
+  text-shadow: 0 15px 40px rgba(0,0,0,.75);
 }
 
 .hero h1 span {
   color: #ffb700;
+  display: inline-block;
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 600px;
   font-size: 18px;
   line-height: 1.8;
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.70);
 }
 
 .hero .btn {
-  min-height: 52px;
-  padding: 0 24px;
-  border-radius: 14px;
-  font-weight: 800;
-  transition: transform .2s ease, box-shadow .2s ease;
+  min-height: 56px;
+  padding: 0 28px;
+  border-radius: 16px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  transition: .25s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,.30);
 }
 
 .hero .btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(255, 183, 0, .22);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(255,183,0,.25);
 }
 
 .hero .btn + .btn {
-  margin-left: 8px;
+  margin-left: 10px;
 }
 
-@media (max-width: 750px) {
+/* Make the chaap feature card look premium */
+
+.hero-card,
+.hero-box,
+.hero .card {
+  border-radius: 30px !important;
+  min-height: 390px;
+  padding: 45px 30px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,190,0,.20), transparent 30%),
+    linear-gradient(145deg,#ff321d,#9d1010) !important;
+  border: 1px solid rgba(255,200,80,.35);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.55),
+    0 0 60px rgba(255,50,20,.20);
+  transform: rotate(2deg);
+  transition: .3s ease;
+}
+
+.hero-card:hover,
+.hero-box:hover,
+.hero .card:hover {
+  transform: rotate(0deg) translateY(-8px);
+  box-shadow:
+    0 40px 90px rgba(0,0,0,.65),
+    0 0 70px rgba(255,70,20,.30);
+}
+
+@media (max-width: 800px) {
+
   .hero {
-    min-height: 600px;
-    padding: 70px 7% 55px;
+    min-height: auto;
+    padding: 75px 7% 60px;
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
   .hero h1 {
-    font-size: clamp(42px, 12vw, 62px);
-    letter-spacing: -2px;
+    font-size: clamp(44px,12vw,64px);
+    letter-spacing: -2.5px;
   }
 
   .hero p {
@@ -219,8 +259,11 @@ section {
     width: 100%;
     margin: 8px 0 0 !important;
   }
+
+  .hero-card,
+  .hero-box,
+  .hero .card {
+    min-height: 330px;
+    transform: none;
+  }
 }
-
-
-
-
