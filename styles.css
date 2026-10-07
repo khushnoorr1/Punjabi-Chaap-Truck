@@ -128,142 +128,493 @@ section {
     font-size: 22px;
   }
 }
-/* PREMIUM HERO UPGRADE */
+/* PUNJABI CHAAP TRUCK — PREMIUM EDITORIAL STYLE */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* MAIN LOOK */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f3efe6;
+  color: #111;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+  background: rgba(243,239,230,.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #171717;
+  padding: 18px 6%;
+}
+
+.logo {
+  color: #111 !important;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
+
+.logo b,
+.logo em {
+  color: #c82018;
+}
+
+nav {
+  gap: 28px;
+}
+
+nav a {
+  color: #111;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.pill {
+  background: #c82018 !important;
+  color: #fff !important;
+  border-radius: 0;
+  padding: 13px 20px;
+}
+
+/* HERO */
 
 .hero {
-  position: relative;
   min-height: 720px;
-  padding: 100px 7%;
+  padding: 90px 7%;
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 65px;
   align-items: center;
-  gap: 50px;
-  overflow: hidden;
+
   background:
-    radial-gradient(circle at 80% 45%, rgba(255,55,20,.30), transparent 30%),
-    radial-gradient(circle at 15% 85%, rgba(255,183,0,.14), transparent 30%),
-    linear-gradient(135deg,#070707,#17110c 55%,#080808);
+    radial-gradient(
+      circle at 82% 45%,
+      rgba(200,32,24,.10),
+      transparent 30%
+    ),
+    #f3efe6;
+
+  border-bottom: 1px solid #111;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  right: -180px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,60,20,.20);
-  filter: blur(100px);
-  border-radius: 50%;
+/* SMALL LABEL */
+
+.tag {
+  color: #c82018;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.hero > * {
-  position: relative;
-  z-index: 2;
-}
+/* HUGE TYPOGRAPHY */
 
 .hero h1 {
-  max-width: 800px;
-  font-size: clamp(52px,6.5vw,88px);
-  line-height: .95;
-  letter-spacing: -4px;
-  margin: 18px 0 24px;
-  text-shadow: 0 15px 40px rgba(0,0,0,.75);
+  max-width: 850px;
+  margin: 10px 0 28px;
+
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(64px, 9vw, 125px);
+  line-height: .86;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  color: #111;
 }
 
 .hero h1 span {
-  color: #ffb700;
-  display: inline-block;
+  color: #c82018;
 }
 
 .hero p {
-  max-width: 600px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.70);
+  max-width: 560px;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.75;
 }
 
+/* HERO BUTTONS */
+
 .hero .btn {
-  min-height: 56px;
-  padding: 0 28px;
-  border-radius: 16px;
+  display: inline-block;
+  min-height: 52px;
+  padding: 0 27px;
+
+  border-radius: 0;
   font-weight: 900;
-  letter-spacing: .3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
   transition: .25s ease;
-  box-shadow: 0 12px 30px rgba(0,0,0,.30);
 }
 
 .hero .btn:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(255,183,0,.25);
+  transform: translateY(-4px);
 }
 
 .hero .btn + .btn {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
-/* Make the chaap feature card look premium */
+/* YELLOW BUTTON BECOMES RED */
 
-.hero-card,
-.hero-box,
-.hero .card {
-  border-radius: 30px !important;
-  min-height: 390px;
-  padding: 45px 30px !important;
+.yellow {
+  background: #c82018 !important;
+  color: #fff !important;
+}
+
+/* RED BUTTON */
+
+.red {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+/* HERO FOOD CARD */
+
+.herofood {
+  height: 460px;
+
+  border-radius: 0 !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d52b20 0%,
+      #9d1712 55%,
+      #5e0b08 100%
+    ) !important;
+
+  border: 1px solid #111;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   text-align: center;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(255,190,0,.20), transparent 30%),
-    linear-gradient(145deg,#ff321d,#9d1010) !important;
-  border: 1px solid rgba(255,200,80,.35);
+
   box-shadow:
-    0 30px 80px rgba(0,0,0,.55),
-    0 0 60px rgba(255,50,20,.20);
-  transform: rotate(2deg);
+    18px 18px 0 #111,
+    0 30px 70px rgba(0,0,0,.20);
+
+  transform: rotate(1.5deg);
   transition: .3s ease;
 }
 
-.hero-card:hover,
-.hero-box:hover,
-.hero .card:hover {
-  transform: rotate(0deg) translateY(-8px);
+.herofood:hover {
+  transform: rotate(0deg) translateY(-7px);
   box-shadow:
-    0 40px 90px rgba(0,0,0,.65),
-    0 0 70px rgba(255,70,20,.30);
+    12px 12px 0 #111,
+    0 35px 80px rgba(0,0,0,.25);
 }
+
+.herofood strong {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(50px, 6vw, 82px);
+  line-height: .9;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.herofood small {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* STATS */
+
+.stats {
+  background: #111;
+  border: 0;
+}
+
+.stats div {
+  border-right: 1px solid #444;
+  padding: 25px 15px;
+}
+
+.stats b {
+  color: #fff;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.stats span {
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+/* ALL SECTIONS */
+
+section {
+  padding: 90px 7%;
+}
+
+/* SECTION HEADINGS */
+
+.heading h2,
+.location h2,
+.contact h2 {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(45px, 6vw, 72px);
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.heading p,
+.location p,
+.contact p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* MENU TABS */
+
+.tabs {
+  margin-bottom: 35px;
+}
+
+.tabs button {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+  border-radius: 0;
+  padding: 11px 20px;
+
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tabs button.active {
+  background: #111;
+  color: #fff;
+}
+
+/* MENU CARDS */
+
+.grid {
+  gap: 22px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #111;
+  border-radius: 0;
+  padding: 25px;
+
+  box-shadow: 7px 7px 0 rgba(17,17,17,.10);
+
+  transition: .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 0 rgba(17,17,17,.18);
+}
+
+.card h3 {
+  font-family: "Anton", Impact, sans-serif;
+  font-size: 27px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.desc {
+  color: #777;
+  line-height: 1.5;
+}
+
+.prices button {
+  background: #f3efe6;
+  color: #111;
+  border: 1px solid #111;
+  border-radius: 0;
+  font-weight: 800;
+}
+
+.prices button:hover {
+  background: #c82018;
+  color: #fff;
+  border-color: #c82018;
+}
+
+/* PHOTOS */
+
+.photos {
+  gap: 25px;
+}
+
+.photos img {
+  border-radius: 0;
+  border: 1px solid #111;
+}
+
+/* LOCATION */
+
+.location {
+  background: #111;
+  color: #fff;
+}
+
+.location h2 {
+  color: #fff;
+}
+
+.location p {
+  color: #aaa;
+}
+
+.map {
+  background: #f3efe6;
+  color: #111;
+  border: 0;
+  border-radius: 0;
+  min-height: 300px;
+  box-shadow: 12px 12px 0 #c82018;
+}
+
+.map small {
+  color: #555;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #c82018;
+  color: #fff;
+}
+
+.contact h2 {
+  color: #fff;
+}
+
+.contact p {
+  color: rgba(255,255,255,.82);
+}
+
+/* CART */
+
+#cart {
+  background: #111;
+  color: #fff;
+}
+
+.cartitem {
+  border-bottom: 1px solid #333;
+}
+
+.carthead button {
+  color: #fff;
+}
+
+#clear {
+  color: #aaa;
+}
+
+#fab {
+  background: #c82018;
+  color: #fff;
+  border-radius: 0;
+}
+
+/* FOOTER */
+
+footer {
+  background: #111;
+  color: #999;
+  border-top: 1px solid #333;
+}
+
+footer b {
+  color: #fff;
+}
+
+footer a {
+  color: #c82018;
+}
+
+/* MOBILE */
 
 @media (max-width: 800px) {
 
+  header {
+    padding: 15px 6%;
+  }
+
   .hero {
     min-height: auto;
-    padding: 75px 7% 60px;
+    padding: 70px 6% 65px;
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 45px;
   }
 
   .hero h1 {
-    font-size: clamp(44px,12vw,64px);
-    letter-spacing: -2.5px;
+    font-size: clamp(58px, 17vw, 88px);
+    line-height: .88;
   }
 
   .hero p {
     font-size: 16px;
-    line-height: 1.65;
   }
 
   .hero .btn {
     width: 100%;
-    margin: 8px 0 0 !important;
+    margin: 7px 0 !important;
   }
 
-  .hero-card,
-  .hero-box,
-  .hero .card {
-    min-height: 330px;
+  .herofood {
+    height: 330px;
     transform: none;
+    box-shadow: 10px 10px 0 #111;
+  }
+
+  .herofood strong {
+    font-size: 58px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats div {
+    border-bottom: 1px solid #444;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+
+  .heading h2,
+  .location h2,
+  .contact h2 {
+    font-size: 48px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .map {
+    box-shadow: 8px 8px 0 #c82018;
   }
 }
