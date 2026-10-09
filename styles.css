@@ -684,3 +684,25 @@ footer a {
     font-size: 16px;
     cursor: pointer;
 }
+
+.customer-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+}
+.customer-name label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ddd;
+    font-size: 14px;
+}
+.customer-name input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: #262626;
+    color: #fff;
+    border: 1px solid #444;
+    font-size: 16px;
+}
