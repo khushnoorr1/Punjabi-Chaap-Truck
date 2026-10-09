@@ -51,27 +51,32 @@ document.getElementById("fab").onclick=()=>document.getElementById("cart").class
 document.getElementById("close").onclick=()=>document.getElementById("cart").classList.remove("open");
 document.getElementById("clear").onclick=()=>{cart=[];updateCart();};
 
-document.getElementById("wa").onclick=()=>{
-    if(!cart.length) return alert("Please add an item first.");
+document.getElementById("wa").onclick = () => {
+    if (!cart.length) return alert("Please add an item first.");
     
-    // Get the new values from the form
+    // Get the customer name
+    const customerName = document.getElementById("customerName").value.trim();
+    if (!customerName) return alert("Please enter your name.");
+    
+    // Get the order type and pickup time
     const orderType = document.querySelector('input[name="orderType"]:checked').value;
     const pickupTime = document.getElementById("pickupTime").value;
     
-    // Check if they selected a time
-    if (!pickupTime) return alert("Please select a pickup time from the dropdown.");
+    if (!pickupTime) return alert("Please select a pickup time.");
 
-    let total=cart.reduce((a,x)=>a+x.price,0);
+    let total = cart.reduce((a, x) => a + x.price, 0);
     
-    // Build the new WhatsApp message
-    let msg="Hello Punjabi Chaap Truck!\n\n";
-    msg += "👤 Order Type: " + orderType + "\n";
+    // Build the WhatsApp message with the Name included
+    let msg = "Hello Punjabi Chaap Truck!\n\n";
+    msg += "👤 Name: " + customerName + "\n";
+    msg += "🍽️ Order Type: " + orderType + "\n";
     msg += "⏰ Pickup Time: " + pickupTime + "\n\n";
-    msg += "🛒 Items:\n" + cart.map(x=>`• ${x.name} (${x.size}) - ₹${x.price}`).join("\n");
+    msg += "🛒 Items:\n" + cart.map(x => `• ${x.name} (${x.size}) - ₹${x.price}`).join("\n");
     msg += `\n\n💰 Total: ₹${total}`;
 
-    window.open("https://wa.me/919992537127?text="+encodeURIComponent(msg),"_blank");
+    window.open("https://wa.me/919992537127?text=" + encodeURIComponent(msg), "_blank");
 };
 
+// Keep these at the very bottom
 render();
 updateCart();
